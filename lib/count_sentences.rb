@@ -16,15 +16,9 @@ class String
 
   def count_sentences
     # binding.pry
-    self.split(/[.?!]/).count
-
-    # sentence_count = self.split(/\.|\?|!/).length
-    # puts sentence_count
-
-    #string.scan(/[^\.!?]+[\.!?]/).map(&:strip).count
-
-    # self.split(".", "?", "!", "!!", "...").count
-    # .length?
+    self.split(/[.?!]/).delete_if{|string| string.length == 0}.count
+    # .reject - ok .reject! -not ok
   end
 
 end
+  
